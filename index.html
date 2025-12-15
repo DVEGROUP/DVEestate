@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVE | Премиальная Недвижимость</title>
+    <meta name="description" content="DVE - эксперт в сфере купли/продажи недвижимости. Эксклюзивные предложения для самых требовательных клиентов.">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./images/lilogo.png" alt="Логотип" class="logo-image">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="nav desktop-nav">
+                    <ul class="nav-list">
+                        <li><a href="#главная" class="nav-link" data-section="главная">Главная</a></li>
+                        <li><a href="#о-нас" class="nav-link" data-section="о-нас">О нас</a></li>
+                        <li><a href="#услуги" class="nav-link" data-section="услуги">Услуги</a></li>
+                        <li><a href="#команда" class="nav-link" data-section="команда">Команда</a></li>
+                        <li><a href="#отзывы" class="nav-link" data-section="отзывы">Отзывы</a></li>
+                        <li><a href="#контакты" class="nav-link" data-section="контакты">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav" id="mobileNav">
+                <ul class="mobile-nav-list">
+                    <li><a href="#главная" class="mobile-nav-link" data-section="главная">Главная</a></li>
+                    <li><a href="#о-нас" class="mobile-nav-link" data-section="о-нас">О нас</a></li>
+                    <li><a href="#услуги" class="mobile-nav-link" data-section="услуги">Услуги</a></li>
+                    <li><a href="#команда" class="mobile-nav-link" data-section="команда">Команда</a></li>
+                    <li><a href="#отзывы" class="mobile-nav-link" data-section="отзывы">Отзывы</a></li>
+                    <li><a href="#контакты" class="mobile-nav-link" data-section="контакты">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="главная" class="hero">
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image: url('./images/hero1.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-fade-in-up">Найдите дом своей мечты</h1>
+                        <p class="hero-subtitle animate-fade-in-up delay-1">Эксклюзивные предложения для самых требовательных клиентов</p>
+                        <div class="hero-buttons animate-fade-in-up delay-2">
+                            <button class="btn btn-primary" onclick="openContactModal('Купить недвижимость')">Купить</button>
+                            <button class="btn btn-secondary" onclick="openContactModal('Продать недвижимость')">Продать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="background-image: url('./images/hero2.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Премиальные объекты</h1>
+                        <p class="hero-subtitle">Недвижимость, которая превосходит ожидания</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="openContactModal('Премиальные объекты')">Купить</button>
+                            <button class="btn btn-secondary" onclick="openContactModal('Продать недвижимость')">Продать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="background-image: url('./images/hero3.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Уникальные интерьеры</h1>
+                        <p class="hero-subtitle">Стиль и комфорт для вашей жизни</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="openContactModal('Уникальные интерьеры')">Купить</button>
+                            <button class="btn btn-secondary" onclick="openContactModal('Продать недвижимость')">Продать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Arrows -->
+        <button class="hero-nav hero-nav-prev" id="heroPrev" aria-label="Previous slide">
+            <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="hero-nav hero-nav-next" id="heroNext" aria-label="Next slide">
+            <i data-lucide="chevron-right"></i>
+        </button>
+        
+        <!-- Indicators -->
+        <div class="hero-indicators" id="heroIndicators">
+            <button class="hero-indicator active" data-slide="0"></button>
+            <button class="hero-indicator" data-slide="1"></button>
+            <button class="hero-indicator" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="о-нас" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">О Компании DVE</h2>
+                <p class="section-subtitle">Ваш эксперт в сфере купли/продажи недвижимости</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image-wrapper scroll-reveal">
+                    <div class="about-image">
+                        <img src="./images/about.jpg" alt="О компании DVE">
+                    </div>
+                    <div class="about-image-decoration"></div>
+                </div>
+                
+                <div class="about-content scroll-reveal delay-2">
+                    <h3 class="about-title">Профессионализм и безупречное качество</h3>
+                    <p class="about-text">
+                        DVE – агентство недвижимости, специализирующееся на купле, продаже и аренде объектов. 
+                        Наш многолетний опыт в сфере недвижимости и глубокое знание рынка позволяют нам предлагать 
+                        исключительные объекты и безупречный сервис.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <span>Эксклюзивные объекты</span>
+                        </div>
+                        <div class="about-feature">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <span>Полное юридическое сопровождение</span>
+                        </div>
+                        <div class="about-feature">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <span>Индивидуальный подход</span>
+                        </div>
+                        <div class="about-feature">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <span>Конфиденциальность</span>
+                        </div>
+                        <div class="about-feature">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <span>Профессиональная команда</span>
+                        </div>
+                        <div class="about-feature">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <span>Международные стандарты</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="scrollToSection('контакты')">Узнать больше</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="услуги" class="services section section-dark">
+        <div class="container">
+            <div class="section-header light">
+                <h2 class="section-title">Наши услуги</h2>
+                <p class="section-subtitle">Полный спектр услуг в сфере недвижимости</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">
+                        <i data-lucide="home"></i>
+                    </div>
+                    <h3 class="service-title">Покупка/Продажа вторичной недвижимости</h3>
+                    <p class="service-description">
+                        Найдём идеальный вариант на вторичном рынке или поможем продать квартиру по выгодной цене.
+                    </p>
+                </div>
+                
+                <div class="service-card scroll-reveal delay-1">
+                    <div class="service-icon">
+                        <i data-lucide="search"></i>
+                    </div>
+                    <h3 class="service-title">Покупка/Продажа коммерческой недвижимости</h3>
+                    <p class="service-description">
+                        Поможем купить, продать или арендовать прибыльную коммерческую недвижимость.
+                    </p>
+                </div>
+                
+                <div class="service-card scroll-reveal delay-2">
+                    <div class="service-icon">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <h3 class="service-title">Подбор и сопровождение покупки новостройки</h3>
+                    <p class="service-description">
+                        Поможем найти квартиру в новостройке без комиссии и переплат.
+                    </p>
+                </div>
+                
+                <div class="service-card scroll-reveal delay-3">
+                    <div class="service-icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3 class="service-title">Подбор и расчёт окупаемости ГАБ</h3>
+                    <p class="service-description">
+                        Профессиональные консультации по всем вопросам, связанным с подбором ГАБ.
+                    </p>
+                </div>
+                
+                <div class="service-card scroll-reveal delay-4">
+                    <div class="service-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="service-title">Одобрение ипотеки бесплатно</h3>
+                    <p class="service-description">
+                        Проверим вашу ситуацию, подготовим документы и подадим заявки в топ 10 банков.
+                    </p>
+                </div>
+                
+                <div class="service-card scroll-reveal delay-5">
+                    <div class="service-icon">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3 class="service-title">Сопровождение сделки</h3>
+                    <p class="service-description">
+                        Сделку будет сопровождать квалифицированный юрист с опытом работы более 10 лет.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="команда" class="team section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Наша команда</h2>
+                <p class="section-subtitle">Профессионалы, которые помогут вам найти идеальную недвижимость</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member scroll-reveal">
+                    <div class="team-member-image">
+                        <img src="./images/team1.jpg" alt="Дашкин Вячеслав">
+                        <div class="team-member-overlay">
+                            <div class="team-member-contacts">
+                                <a href="mailto:dvegroupp@gmail.com" class="team-contact">
+                                    <i data-lucide="mail"></i>
+                                    <span>dvegroupp@gmail.com</span>
+                                </a>
+                                <a href="tel:+79933672624" class="team-contact">
+                                    <i data-lucide="phone"></i>
+                                    <span>+7 (993) 367-26-24</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Дашкин Вячеслав</h3>
+                        <p class="team-member-position">Генеральный директор</p>
+                    </div>
+                </div>
+                
+                <div class="team-member scroll-reveal delay-1">
+                    <div class="team-member-image">
+                        <img src="./images/team2.jpg" alt="Дашкина Екатерина">
+                        <div class="team-member-overlay">
+                            <div class="team-member-contacts">
+                                <a href="mailto:dvegroupp@gmail.com" class="team-contact">
+                                    <i data-lucide="mail"></i>
+                                    <span>dvegroupp@gmail.com</span>
+                                </a>
+                                <a href="tel:+79933672624" class="team-contact">
+                                    <i data-lucide="phone"></i>
+                                    <span>+7 (993) 367-26-24</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Дашкина Екатерина</h3>
+                        <p class="team-member-position">Руководитель отдела продаж</p>
+                    </div>
+                </div>
+                
+                <div class="team-member scroll-reveal delay-2">
+                    <div class="team-member-image">
+                        <img src="./images/team3.jpg" alt="Симченко Глеб">
+                        <div class="team-member-overlay">
+                            <div class="team-member-contacts">
+                                <a href="mailto:dvegroupp@gmail.com" class="team-contact">
+                                    <i data-lucide="mail"></i>
+                                    <span>dvegroupp@gmail.com</span>
+                                </a>
+                                <a href="tel:+79933672624" class="team-contact">
+                                    <i data-lucide="phone"></i>
+                                    <span>+7 (993) 367-26-24</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Симченко Глеб</h3>
+                        <p class="team-member-position">Старший брокер</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="отзывы" class="testimonials section section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <p class="section-subtitle">Что говорят о нас те, кто уже воспользовался нашими услугами</p>
+            </div>
+            
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+                        <i data-lucide="quote" class="testimonial-quote-icon"></i>
+                        <p class="testimonial-text">
+                            Очень рада что выбрала ребят, они профессионалы, все чётко грамотно, без лишней воды. 
+                            Получили заказ и выполнили его. Предоставили своего юриста. Несмотря на все трудности и 
+                            сложности которые возникали в процессе работы, ребята все сделали шикарно.
+                        </p>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Оля</p>
+                            <p class="testimonial-position">Купля/Продажа квартир</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+                        <i data-lucide="quote" class="testimonial-quote-icon"></i>
+                        <p class="testimonial-text">
+                            Хочу поблагодарить Вячеслава и Екатерину за помощь в продаже офиса который мы не могли продать 
+                            несколько лет! Было ощущение того что люди не заинтересованы в продаже, показов не было от слова-совсем. 
+                            Но я решила дать агентам ещё один шанс и не пожалела!
+                        </p>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Людмила</p>
+                            <p class="testimonial-position">Купля/Продажа нежилых помещений</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+                        <i data-lucide="quote" class="testimonial-quote-icon"></i>
+                        <p class="testimonial-text">
+                            Недавно обращался за консультацией по продаже своей квартиры в компанию. Очень доволен профессионализмом 
+                            и подходом к делу. Консультант подробно объяснил все этапы продажи, от оценки рыночной стоимости до 
+                            подготовки документов.
+                        </p>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Тимофей</p>
+                            <p class="testimonial-position">Купля/Продажа квартир</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+                        <i data-lucide="quote" class="testimonial-quote-icon"></i>
+                        <p class="testimonial-text">
+                            Вячеслав помог нам и с выбором квартиры и сопровождал нас от начала до конца сделки, всегда был вежливым 
+                            и работал и перевыполнил свои обещания, видно человек любит свою работу и выполняет все на совесть.
+                        </p>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Руслан</p>
+                            <p class="testimonial-position">Купля/Продажа квартир</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+                        <i data-lucide="quote" class="testimonial-quote-icon"></i>
+                        <p class="testimonial-text">
+                            Огромное спасибо Вячеславу за качественную работу! В силу того, что я проживала в другом городе - всю 
+                            заботу о показе квартиры Вячеслав взял на себя. Быстро! качественно! профессионально! Рекомендую!
+                        </p>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Ирина</p>
+                            <p class="testimonial-position">Владелец пентхауса</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-dots" id="testimonialsDots"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="контакты" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Связаться с нами</h2>
+                <p class="section-subtitle">Мы всегда рады ответить на ваши вопросы</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info scroll-reveal">
+                    <h3 class="contact-info-title">Контактная информация</h3>
+                    <p class="contact-info-text">
+                        Если у вас есть вопросы о наших услугах или вы хотите получить консультацию, свяжитесь с нами 
+                        удобным для вас способом. Мы с радостью поможем вам найти идеальную недвижимость или ответим на любые вопросы.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div class="contact-detail-content">
+                                <h4>Телефон</h4>
+                                <a href="tel:+79933672624">+7 (993) 367-26-24</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="contact-detail-content">
+                                <h4>Email</h4>
+                                <a href="mailto:dvegroupp@gmail.com">dvegroupp@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="contact-detail-content">
+                                <h4>Адрес</h4>
+                                <p>г. Москва, ул. Нагорная, д.16к2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper scroll-reveal delay-2">
+                    <h3 class="contact-form-title">Отправить сообщение</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <span id="submitBtnText">Отправить</span>
+                            <span id="submitBtnLoader" class="btn-loader"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">DVE</span>
+                    <p class="footer-description">
+                        Премиальное агентство недвижимости, специализирующееся на купле, продаже и аренде объектов.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="#главная">Главная</a></li>
+                        <li><a href="#о-нас">О нас</a></li>
+                        <li><a href="#услуги">Услуги</a></li>
+                        <li><a href="#команда">Команда</a></li>
+                        <li><a href="#отзывы">Отзывы</a></li>
+                        <li><a href="#контакты">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+79933672624">+7 (993) 367-26-24</a></li>
+                        <li><a href="mailto:dvegroupp@gmail.com">dvegroupp@gmail.com</a></li>
+                        <li>г. Москва, ул. Нагорная, д.16к2</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 DVE. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-overlay" onclick="closeContactModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeContactModal()">
+                <i data-lucide="x"></i>
+            </button>
+            
+            <h2 class="modal-title" id="modalTitle">Связаться с нами</h2>
+            
+            <form id="modalForm" class="contact-form">
+                <div class="form-group">
+                    <label for="modalName">Ваше имя *</label>
+                    <input type="text" id="modalName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalEmail">Email *</label>
+                    <input type="email" id="modalEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalPhone">Телефон</label>
+                    <input type="tel" id="modalPhone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalMessage">Сообщение *</label>
+                    <textarea id="modalMessage" name="message" rows="4" required></textarea>
+                </div>
+                
+                <div id="modalFormMessage" class="form-message"></div>
+                
+                <button type="submit" class="btn btn-primary btn-block" id="modalSubmitBtn">
+                    <span id="modalSubmitBtnText">Отправить</span>
+                    <span id="modalSubmitBtnLoader" class="btn-loader"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/form.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
