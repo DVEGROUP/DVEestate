@@ -296,7 +296,7 @@ ul {
     }
 }
 .logo-image {
-    height: 30px; /* Настройте под нужный размер */
+    height: 28px; /* Настройте под нужный размер */
     width: auto;
 }
 
@@ -431,8 +431,9 @@ ul {
     }
     
     .hero-nav {
-        width: 40px;
-        height: 40px;
+        top: auto;
+        bottom: 120px; /* Опускаем стрелки вниз */
+        transform: none;
     }
 }
 
