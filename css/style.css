@@ -783,7 +783,15 @@ ul {
     .testimonial-card {
         flex: 0 0 300px;
     }
+    .testimonials-track {
+
+    gap: 10px;
+
 }
+}
+
+
+
 
 /* ===== Contact Section ===== */
 .contact-grid {
