@@ -1098,3 +1098,280 @@ ul {
         font-size: 1.5rem;
     }
 }
+
+/* ========================================
+   HORIZONTAL SLIDERS
+   ======================================== */
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.slider-slide {
+    flex-shrink: 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* Навигация слайдера */
+.slider-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--white);
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.slider-btn:hover:not(:disabled) {
+    background: var(--secondary);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(201, 173, 152, 0.3);
+}
+
+.slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.slider-btn i {
+    width: 24px;
+    height: 24px;
+    stroke: var(--secondary);
+    transition: stroke 0.3s ease;
+}
+
+.slider-btn:hover:not(:disabled) i {
+    stroke: var(--white);
+}
+
+/* Индикаторы */
+.slider-indicators {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.slider-indicator {
+    width: 12px;
+    height: 12px;
+    background: var(--tertiary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.slider-indicator:hover {
+    background: var(--secondary-light);
+    transform: scale(1.2);
+}
+
+.slider-indicator.active {
+    background: var(--secondary);
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 767px) {
+    .slider-slide {
+        padding: 0 8px;
+    }
+    
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slider-btn i {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .slider-indicators {
+        gap: 8px;
+    }
+    
+    .slider-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .slider-indicator.active {
+        width: 24px;
+    }
+}
+
+/* Убираем grid для секций со слайдерами */
+#услуги .slider-wrapper .slider-slide > *,
+#команда .slider-wrapper .slider-slide > * {
+    height: 100%;
+}
+
+/* Обеспечиваем, чтобы карточки в слайдах были одинаковой высоты */
+.slider-slide .service-card,
+.slider-slide .team-member {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   PARTNERS SECTION
+   ======================================== */
+
+.partners {
+    background: linear-gradient(135deg, var(--background) 0%, var(--tertiary-light) 100%);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.partner-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(201, 173, 152, 0.25);
+    border-color: var(--secondary);
+}
+
+.partner-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.partner-logo h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.partner-card:hover .partner-logo h3 {
+    color: var(--secondary);
+}
+
+.partner-description {
+    font-size: 14px;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 767px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .partner-card {
+        padding: 30px 20px;
+    }
+    
+    .partner-logo {
+        height: 60px;
+    }
+    
+    .partner-logo h3 {
+        font-size: 24px;
+    }
+}
+
+
+/* ========================================
+   MAP BUTTON IN FOOTER
+   ======================================== */
+
+.footer-map-link {
+    margin-top: 15px;
+}
+
+.btn-map {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
+}
+
+.btn-map:hover {
+    background: var(--secondary-light);
+    border-color: var(--secondary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 173, 152, 0.4);
+}
+
+.btn-map i {
+    width: 18px;
+    height: 18px;
+    stroke: var(--white);
+}
+
+@media (max-width: 767px) {
+    .btn-map {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
+
